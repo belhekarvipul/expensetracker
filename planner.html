@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Expense Planner</title>
+        <link rel="stylesheet" href="planner.css">
+		<link rel="stylesheet" href="font-awesome.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <h2>Expense Planner</h2>
+		<input type="button" class="btn" style="width: 15%;right: 5px;position: absolute;top: 0;" value="Expense Tracker" onClick="navigateToTracker()" />
+        <div class="container">
+            <div style="width: 40%;
+            border-right: 1px solid lightgray;
+            padding-right: 10px;">
+                <h3>Add New Plan</h3>
+                <form id="form">
+                    <label id="planId" style="display: none;">test</label>
+                    <div class="form-control">
+                        <label for="Month">Month</label>
+                        <select name="month" id="month" name="Select Month" ></select>
+                    </div>
+					
+					<div class="form-control">
+                        <label for="Year">Year</label>
+                        <select name="year" id="year" name="Select Year"></select>
+						<input type="button" class="btn" value="Search plans" onClick="showHistory(false)"/>
+                    </div>
+					
+					<div class="form-control">
+                        <label for="Description">Expense Description</label>
+                        <input type="text" id="description" placeholder="Enter Expense description...">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="PlannedAmount">Planned amount</label>
+                        <input type="number" id="plannedAmount" placeholder="Enter Planned amount...">
+                    </div>
+                    <div class="form-control" id="dvActualAmount" style="display: none;">
+                        <label for="ActualAmount">Actual amount</label>
+                        <input type="number" id="actualAmount" placeholder="Enter Actual amount...">
+                        <input type="button" class="btn" onClick="updatePlan()" value="Update plan"/>
+                        <input type="button" class="btn" onClick="resetForm()" value="Reset"/>
+                    </div>
+                    <button id="btnAddNewPlan" class="btn">Add new plan</button>
+                </form>
+            </div>
+            <div style="flex: 1; padding-left: 20px;">
+                <h3>History</h3>
+				<ul class="list list-header-footer">
+					<li>
+						<span>Month</span>
+						<span>Year</span>
+						<span class="description">Description</span>
+						<span>Planned</span>
+						<span>Actual</span>
+					</li>
+                </ul>
+                <ul id="list" class="list"></ul>
+				<ul class="list list-header-footer">
+					<li>
+						<span class="description">Total amount</span>
+						<span></span>
+						<span></span>
+						<span id="totalPlanned">&#x20b9; 0.00</span>
+						<span id="totalActual">&#x20b9; 0.00</span>
+					</li>
+                </ul>
+            </div>
+        </div>
+        <script src="planner.js"></script>
+    </body>
+</html>

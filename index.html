@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Expense Tracker</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h2>Expense Tracker</h2>
+		<input type="button" class="btn" style="width: 15%;right: 5px;position: absolute;top: 0;" value="Monthly Planner" onClick="navigateToPlanner()" />
+        <div class="container">
+            <div style="width: 50%;
+            border-right: 1px solid lightgray;
+            padding-right: 10px;">
+                <h4>Your Balance</h4>
+                <h1 id="balance">&#x20b9;0.00</h1>
+                <div class="inc-exp-container">
+                    <div>
+                        <h4>Income</h4>
+                        <p id="money-plus" class="money-plus">
+                            &#x20b9;0.00
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Expense</h4>
+                        <p id="money-minus" class="money-minus">
+                            &#x20b9;0.00
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Add New Transition</h3>
+                <form id="form">
+                    <div class="form-control">
+                        <label for="Text">Description</label>
+                        <input type="text" id="text" placeholder="Enter Transaction ...">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="Amount">Amount</label>
+                        <input type="number" id="amount" placeholder="Enter Amount...">
+                    </div>
+                    <button class="btn">Add New Transactions</button>
+                </form>
+            </div>
+            <div style="flex: 1; padding-left: 20px;
+            margin-top: 25px;">
+                <h3>History</h3>
+                <ul id="list" class="list">
+                    <!-- <li class="minus">Cash <span>-$400</span> <button class="delete-btn">x</button></li> -->
+                </ul>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
